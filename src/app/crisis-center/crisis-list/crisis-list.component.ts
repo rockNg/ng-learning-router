@@ -1,41 +1,41 @@
 import { Component, OnInit } from '@angular/core';;
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { HeroService } from '../hero.service';
-import { Hero } from '../hero';
+import { crisisService } from '../crisis.service';
+import { crisis } from '../crisis';
 
 import { Observable }        from 'rxjs/Observable';
 import { Subject }           from 'rxjs/Subject';
 import 'rxjs/add/operator/switchMap';
 
 @Component({
-  selector: 'app-hero-list',
-  templateUrl: './hero-list.component.html',
-  styleUrls: ['./hero-list.component.css']
+  selector: 'app-crisis-list',
+  templateUrl: './crisis-list.component.html',
+  styleUrls: ['./crisis-list.component.css']
 })
-export class HeroListComponent implements OnInit {
+export class CrisisListComponent implements OnInit {
 
-  private heroes:  Observable<Hero[]>;
+  private crisises:  Observable<crisis[]>;
   selectedId: number;
 
   constructor(
   	private router: Router,
-  	private service: HeroService,
+  	private service: crisisService,
     private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
-    this.heroes = this.route.paramMap
+    this.crisises = this.route.paramMap
       .switchMap((params: ParamMap) => {
         // (+) before `params.get()` turns the string into a number
         this.selectedId = +params.get('id');
-        return this.service.getHeroes();
+        return this.service.getcrisises();
       });
   }
 
-  onSelect(hero: Hero) {
-	  this.router.navigate(['/hero', hero.id]);
+  onSelect(crisis: crisis) {
+	  this.router.navigate(['/crisis', crisis.id]);
   }
 
-  isSelected(hero: Hero) { return hero.id === this.selectedId; }
+  isSelected(crisis: crisis) { return crisis.id === this.selectedId; }
 
 }

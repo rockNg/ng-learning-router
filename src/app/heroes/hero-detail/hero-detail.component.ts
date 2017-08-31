@@ -1,8 +1,8 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
-import { HeroService } from '../../hero.service';
-import { Hero } from '../../hero';
+import { HeroService } from '../hero.service';
+import { Hero } from '../hero';
 
 import 'rxjs/add/operator/switchMap';
 

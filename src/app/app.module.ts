@@ -5,7 +5,7 @@ import { HttpModule }    from '@angular/http';
 
 import { AppComponent } from './app.component';
 // import { HeroDetailComponent } from './heroes/hero-detail/hero-detail.component';
-import { CrisisListComponent } from './crisis-list/crisis-list.component';
+import { CrisisListComponent } from './crisis-center/crisis-list/crisis-list.component';
 
 import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -14,7 +14,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AppRoutingModule } from './app-routing/app-routing.module';
 
 import { HeroesModule } from './heroes/heroes.module';
-
+import { CrisisModule } from './crisis-center/crisis.module';
 
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
@@ -26,7 +26,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   declarations: [
     AppComponent,
     // HeroDetailComponent,
-    CrisisListComponent,
+    // CrisisListComponent,
     PageNotFoundComponent
     // ,
     // HeroListComponent
@@ -38,6 +38,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpModule,
 
     HeroesModule,
+    CrisisModule,
     AppRoutingModule  //must after HeroesModule, the order is very important
     ,
     InMemoryWebApiModule.forRoot(InMemoryDataService),

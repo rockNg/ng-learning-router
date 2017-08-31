@@ -6,7 +6,7 @@ import { HeroRoutingModule } from './hero-routing/hero-routing.module';
 import { HeroListComponent } from './hero-list/hero-list.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 
-import { HeroService } from '../hero.service';
+import { HeroService } from './hero.service';
 
 @NgModule({
 	imports: [
