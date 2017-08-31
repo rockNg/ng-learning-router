@@ -20,6 +20,8 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CrisisCenterComponent } from './src/app/crisis-center/crisis-center/crisis-center.component';
+import { CrisisCenterHomeComponent } from './crisis-center-home/crisis-center-home.component';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppComponent,
     // HeroDetailComponent,
     // CrisisListComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    CrisisCenterComponent,
+    CrisisCenterHomeComponent
     // ,
     // HeroListComponent
   ],
