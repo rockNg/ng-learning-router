@@ -19,6 +19,8 @@ import { HeroesModule } from './heroes/heroes.module';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { InMemoryDataService }  from './in-memory-data.service';
     HeroesModule,
     AppRoutingModule  //must after HeroesModule, the order is very important
     ,
-    InMemoryWebApiModule.forRoot(InMemoryDataService)
+    InMemoryWebApiModule.forRoot(InMemoryDataService),
+
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

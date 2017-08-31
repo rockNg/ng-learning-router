@@ -6,12 +6,17 @@ import { Hero } from '../../hero';
 
 import 'rxjs/add/operator/switchMap';
 
+import { slideInDownAnimation } from '../../animations';
+
 @Component({
   selector: 'app-hero-detail',
   templateUrl: './hero-detail.component.html',
-  styleUrls: ['./hero-detail.component.css']
+  styleUrls: ['./hero-detail.component.css'],
+  animations: [slideInDownAnimation]
 })
 export class HeroDetailComponent implements OnInit {
+
+  @HostBinding('@routeAnimation') routeAnimation = true;
 
   @HostBinding('style.display')   display = 'block';
   @HostBinding('style.position')  position = 'absolute';
