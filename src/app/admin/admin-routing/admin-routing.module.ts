@@ -4,7 +4,6 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AuthGuard }                from '../../auth-guard.service';
 
-
 import {
 		AdminComponent,
 		ManageCrisesComponent, 

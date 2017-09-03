@@ -23,11 +23,12 @@ import { InMemoryDataService }  from './in-memory-data.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ComposeMessageComponent } from './compose-message/compose-message.component';
 import { AdminComponent } from './admin/admin.component';
+import { LoginComponent } from './login/login.component';
 // import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 // import { ManageHeroesComponent } from './admin/manage-heroes/manage-heroes.component';
 // import { CrisisCenterComponent } from './crisis-center/crisis-center.component';
 // import { CrisisCenterHomeComponent } from './crisis-center/crisis-center-home/crisis-center-home.component';
-
+import { LoginRoutingModule }      from './login-routing/login-routing.module';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { AdminComponent } from './admin/admin.component';
     // CrisisListComponent,
     PageNotFoundComponent,
     ComposeMessageComponent,
+    LoginComponent,
     // AdminComponent,
     // AdminDashboardComponent,
     // ManageHeroesComponent,
@@ -52,6 +54,7 @@ import { AdminComponent } from './admin/admin.component';
 
     AdminModule,
     HeroesModule,
+    LoginRoutingModule,
     CrisisCenterModule,
     AppRoutingModule  //must after HeroesModule, the order is very important
     ,
