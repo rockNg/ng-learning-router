@@ -1,4 +1,4 @@
-export class crisis {
+export class Crisis {
 	id:number;
 	name:string;
 }

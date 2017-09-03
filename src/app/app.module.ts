@@ -5,7 +5,7 @@ import { HttpModule }    from '@angular/http';
 
 import { AppComponent } from './app.component';
 // import { HeroDetailComponent } from './heroes/hero-detail/hero-detail.component';
-import { CrisisListComponent } from './crisis-center/crisis-list/crisis-list.component';
+// import { CrisisListComponent } from './crisis-center/crisis-list/crisis-list.component';
 
 import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -13,15 +13,20 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 
 import { AppRoutingModule } from './app-routing/app-routing.module';
 
+import { AdminModule } from './admin/admin.module';
 import { HeroesModule } from './heroes/heroes.module';
-import { CrisisModule } from './crisis-center/crisis.module';
+import { CrisisCenterModule } from './crisis-center/crisis-center.module';
 
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CrisisCenterComponent } from './src/app/crisis-center/crisis-center/crisis-center.component';
-import { CrisisCenterHomeComponent } from './crisis-center-home/crisis-center-home.component';
+import { ComposeMessageComponent } from './compose-message/compose-message.component';
+import { AdminComponent } from './admin/admin.component';
+// import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
+// import { ManageHeroesComponent } from './admin/manage-heroes/manage-heroes.component';
+// import { CrisisCenterComponent } from './crisis-center/crisis-center.component';
+// import { CrisisCenterHomeComponent } from './crisis-center/crisis-center-home/crisis-center-home.component';
 
 
 @NgModule({
@@ -30,8 +35,12 @@ import { CrisisCenterHomeComponent } from './crisis-center-home/crisis-center-ho
     // HeroDetailComponent,
     // CrisisListComponent,
     PageNotFoundComponent,
-    CrisisCenterComponent,
-    CrisisCenterHomeComponent
+    ComposeMessageComponent,
+    // AdminComponent,
+    // AdminDashboardComponent,
+    // ManageHeroesComponent,
+    // CrisisCenterComponent,
+    // CrisisCenterHomeComponent
     // ,
     // HeroListComponent
   ],
@@ -41,8 +50,9 @@ import { CrisisCenterHomeComponent } from './crisis-center-home/crisis-center-ho
 
     HttpModule,
 
+    AdminModule,
     HeroesModule,
-    CrisisModule,
+    CrisisCenterModule,
     AppRoutingModule  //must after HeroesModule, the order is very important
     ,
     InMemoryWebApiModule.forRoot(InMemoryDataService),

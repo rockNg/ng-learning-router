@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';;
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { crisisService } from '../crisis.service';
-import { crisis } from '../crisis';
+import { CrisisService } from '../crisis.service';
+import { Crisis } from '../crisis';
 
 import { Observable }        from 'rxjs/Observable';
 import { Subject }           from 'rxjs/Subject';
@@ -14,28 +14,33 @@ import 'rxjs/add/operator/switchMap';
 })
 export class CrisisListComponent implements OnInit {
 
-  private crisises:  Observable<crisis[]>;
+  private crises:  Observable<Crisis[]>;
   selectedId: number;
 
   constructor(
   	private router: Router,
-  	private service: crisisService,
+  	private service: CrisisService,
     private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
-    this.crisises = this.route.paramMap
+    this.crises = this.route.paramMap
       .switchMap((params: ParamMap) => {
-        // (+) before `params.get()` turns the string into a number
         this.selectedId = +params.get('id');
-        return this.service.getcrisises();
+        return this.service.getCrises();
       });
   }
 
-  onSelect(crisis: crisis) {
-	  this.router.navigate(['/crisis', crisis.id]);
+  onSelect(crisis: Crisis) {
+    //1
+	  // this.router.navigate(['/crisis-center', crisis.id]);
+
+    //2
+    this.selectedId = crisis.id;
+    // Navigate with relative link
+    this.router.navigate([crisis.id], { relativeTo: this.route });
   }
 
-  isSelected(crisis: crisis) { return crisis.id === this.selectedId; }
+  isSelected(crisis: Crisis) { return crisis.id === this.selectedId; }
 
 }

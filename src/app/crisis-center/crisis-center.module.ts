@@ -1,20 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { crisisRoutingModule } from './crisis-routing/crisis-routing.module';
+import { CrisisCenterRoutingModule } from './crisis-center-routing/crisis-center-routing.module';
 
 import { CrisisListComponent } from './crisis-list/crisis-list.component';
 import { CrisisDetailComponent } from './crisis-detail/crisis-detail.component';
 
-import { crisisService } from './crisis.service';
-import { CrisisCenterComponent } from './crisis-center/crisis-center.component';
+import { CrisisService } from './crisis.service';
+import { CrisisCenterComponent } from './crisis-center.component';
 import { CrisisCenterHomeComponent } from './crisis-center-home/crisis-center-home.component';
+
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 @NgModule({
 	imports: [
 		CommonModule,
 		FormsModule,
-		crisisRoutingModule
+		CrisisCenterRoutingModule
 	],
 	declarations: [
 		CrisisListComponent,
@@ -22,6 +24,6 @@ import { CrisisCenterHomeComponent } from './crisis-center-home/crisis-center-ho
 		CrisisCenterComponent,
 		CrisisCenterHomeComponent
 	],
-	providers: [crisisService]
+	providers: [CrisisService]
 })
-export class CrisisModule { }
+export class CrisisCenterModule { }
